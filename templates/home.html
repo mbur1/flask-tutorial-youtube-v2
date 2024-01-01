@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Titel meiner Webseite</title>
+  </head>
+<body>
+    <h1>Beste Internetseite der Welt.</h1>
+  <h2>Über die Seite</h2>
+  <p>Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. 
+  Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. 
+  Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. Lorem Ipsum. </p>
+  <h2>Stellen</h2>
+  <div>
+    {% for job in jobs %}
+      {% include 'jobitem.html' %}
+    {% endfor %}
+  </div>
+  <button>Kontakt</button>
+</html>
