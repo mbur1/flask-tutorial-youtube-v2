@@ -4,12 +4,11 @@ db_connectionstring = "mysql+pymysql://cs-306092_primaryuser:Verhuxyz667?@scamme
 
 engine = create_engine(db_connectionstring, echo=True)
 
-with engine.connect() as conn:
-  result = conn.execute(text("select * from artikel_posts"))
 
-result_dicts = []
-
-for row in result.all():
-  result_dicts.append(row)
-
-print(result_dicts)
+def load_artikel_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from artikel_posts"))
+    artikel = []
+    for row in result.all():
+      artikel.append(row)
+    return artikel

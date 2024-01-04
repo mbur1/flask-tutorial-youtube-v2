@@ -1,43 +1,15 @@
 from flask import Flask, render_template
+from database import load_artikel_from_db
 
 app = Flask(__name__)
 
-ARTIKEL = [
-    {
-        'id': 1,
-        'title': 'Data Analyst',
-        'continent': '$100k-$200k',
-        'threatlevel': 'USA',
-        'artikeltext': 'USA'
-    },
-    {
-        'id': 2,
-      'title': 'Data Analyst',
-      'continent': '$100k-$200k',
-      'threatlevel': 'USA',
-      'artikeltext': 'USA'
-    },
-    {
-        'id': 3,
-      'title': 'Data Analyst',
-      'continent': '$100k-$200k',
-      'threatlevel': 'USA',
-      'artikeltext': 'USA'
-    },
-    {
-        'id': 4,
-      'title': 'Data Analyst',
-      'continent': '$100k-$200k',
-      'threatlevel': 'USA',
-      'artikeltext': 'USA'
-    },
-]
 
-
+  
 
 @app.route("/")
 def hello_world():
-  return render_template('home.html', artikel=ARTIKEL)
+  artikel = load_artikel_from_db()
+  return render_template('home.html', artikel=artikel)
 
 
 if __name__ == "__main__":
