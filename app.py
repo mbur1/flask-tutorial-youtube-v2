@@ -2,37 +2,42 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-JOBS = [
+ARTIKEL = [
     {
         'id': 1,
         'title': 'Data Analyst',
-        'salary': '$100k-$200k',
-        'location': 'USA'
+        'continent': '$100k-$200k',
+        'threatlevel': 'USA',
+        'artikeltext': 'USA'
     },
     {
         'id': 2,
-        'title': 'Engineer',
-        'salary': '$100k-$300k',
-        'location': 'Deutschland'
+      'title': 'Data Analyst',
+      'continent': '$100k-$200k',
+      'threatlevel': 'USA',
+      'artikeltext': 'USA'
     },
     {
         'id': 3,
-        'title': 'Frontend Engineer',
-        'salary': '$200k',
-        'location': 'India'
+      'title': 'Data Analyst',
+      'continent': '$100k-$200k',
+      'threatlevel': 'USA',
+      'artikeltext': 'USA'
     },
     {
         'id': 4,
-        'title': 'Janitor',
-        'salary': '$100k',
-        'location': 'London'
+      'title': 'Data Analyst',
+      'continent': '$100k-$200k',
+      'threatlevel': 'USA',
+      'artikeltext': 'USA'
     },
 ]
 
 
+
 @app.route("/")
 def hello_world():
-  return render_template('home.html', jobs=JOBS)
+  return render_template('home.html', artikel=ARTIKEL)
 
 
 if __name__ == "__main__":
