@@ -13,6 +13,9 @@ def hello_world():
 @app.route("/artikel/<id>")
 def show_artikel(id):
   art = load_singleart_from_db(id)
+  if not art:
+    return "Not found", 404
+    
   return render_template('artikelpage.html', art=art)
 
 
